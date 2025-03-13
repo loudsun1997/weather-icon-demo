@@ -34,12 +34,12 @@
   }
   
   .slider-container {
-	width: 150px; /* Fixed width for the slider */
-	display: inline-block; /* Ensure it takes up the specified width */
+	width: 150px;
+	display: inline-block;
   }
   
   input[type="range"] {
-	width: 100%; /* Full width of the container (150px) */
+	width: 100%;
 	-webkit-appearance: none;
 	background: transparent;
 	cursor: pointer;
@@ -75,10 +75,29 @@
 	border-radius: 50%;
   }
   
+  /* Style for disabled sliders */
+  input[type="range"]:disabled::-webkit-slider-runnable-track {
+	background: #555; /* Darker track when disabled */
+  }
+  
+  input[type="range"]:disabled::-webkit-slider-thumb {
+	background: #888; /* Gray thumb when disabled */
+	border-color: #888;
+  }
+  
+  input[type="range"]:disabled::-moz-range-track {
+	background: #555;
+  }
+  
+  input[type="range"]:disabled::-moz-range-thumb {
+	background: #888;
+	border-color: #888;
+  }
+  
   .value-display {
 	display: inline-block;
-	width: 40px; /* Fixed width for the value to prevent layout shifts */
-	text-align: right; /* Align the value to the right */
+	width: 40px;
+	text-align: right;
   }
   
   .preview img,
@@ -89,6 +108,24 @@
   .numberStyle {
 	font-size: 70px;
 	color: #fff;
-	font-weight: 200; /* Even lighter */
-  	font-family: 'Helvetica Neue', Arial, sans-serif;
+	font-weight: 200;
+	font-family: 'Helvetica Neue', Arial, sans-serif;
+  }
+  
+  /* Style for file input */
+  input[type="file"] {
+	color: #fff;
+	background: #333;
+	border: 1px solid #ccc;
+	padding: 5px;
+	border-radius: 5px;
+  }
+  
+  input[type="file"]::-webkit-file-upload-button {
+	background: #555;
+	color: #fff;
+	border: none;
+	padding: 5px 10px;
+	border-radius: 5px;
+	cursor: pointer;
   }
