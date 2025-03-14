@@ -1,6 +1,6 @@
-import React from 'react';
+import React, { forwardRef } from 'react';
 
-const SunIcon = ({ style, width = "50", height = "50", beamWidth = 4, sunRadius = 30, beamCount = 8, beamStartOffset = 1, beamEndLength = 15 }) => {
+const SunIcon = forwardRef(({ style, width = "50", height = "50", beamWidth = 4, sunRadius = 30, beamCount = 8, beamStartOffset = 1, beamEndLength = 15 }, ref) => {
   // Convert props to numbers
   const numericSunRadius = Number(sunRadius);
   const numericBeamStartOffset = Number(beamStartOffset);
@@ -53,6 +53,7 @@ const SunIcon = ({ style, width = "50", height = "50", beamWidth = 4, sunRadius 
 
   return (
     <svg
+      ref={ref}
       height={height}
       width={width}
       style={{ ...style }}
@@ -63,6 +64,6 @@ const SunIcon = ({ style, width = "50", height = "50", beamWidth = 4, sunRadius 
       {beams}
     </svg>
   );
-};
+});
 
 export default SunIcon;

@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useRef } from 'react';
 import './App.css';
 import SunIcon from './SunIcon';
 
@@ -12,6 +12,7 @@ function App() {
   const [beamStartOffset, setBeamStartOffset] = useState(1);
   const [beamEndLength, setBeamEndLength] = useState(15);
   const number = 5;
+  const svgRef = useRef(null);
 
   const iconStyle = {
     transform: `rotate(${rotation}deg)`,
@@ -22,11 +23,37 @@ function App() {
   // Debug state changes
   console.log("Rendering with:", { sunRadius, beamStartOffset, beamEndLength });
 
+  const saveSvg = () => {
+    if (svgRef.current) {
+      // Get the SVG element and its content
+      const svgElement = svgRef.current;
+      const svgContent = new XMLSerializer().serializeToString(svgElement);
+      
+      // Create a Blob from the SVG content
+      const blob = new Blob([svgContent], { type: 'image/svg+xml' });
+      
+      // Create a download link
+      const url = URL.createObjectURL(blob);
+      const link = document.createElement('a');
+      link.href = url;
+      link.download = `sun-icon-${new Date().getTime()}.svg`;
+      
+      // Trigger download
+      document.body.appendChild(link);
+      link.click();
+      
+      // Clean up
+      document.body.removeChild(link);
+      URL.revokeObjectURL(url);
+    }
+  };
+
   return (
     <div className="App">
       <h1>Weather Icon Demo</h1>
       <div className="preview">
         <SunIcon
+          ref={svgRef}
           style={iconStyle}
           width="100"
           height="100"
@@ -158,6 +185,11 @@ function App() {
           </span>
           <span className="value-display">{beamEndLength}</span>
         </label>
+
+        {/* Save Button */}
+        <button className="save-button" onClick={saveSvg}>
+          Save SVG
+        </button>
       </div>
     </div>
   );
