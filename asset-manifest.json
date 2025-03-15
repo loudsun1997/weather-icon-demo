@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/loudsun1997/weather-icon-demo/static/css/main.9dada6c6.css",
-    "main.js": "/loudsun1997/weather-icon-demo/static/js/main.d3537593.js",
-    "static/js/453.48380f38.chunk.js": "/loudsun1997/weather-icon-demo/static/js/453.48380f38.chunk.js",
-    "index.html": "/loudsun1997/weather-icon-demo/index.html",
-    "main.9dada6c6.css.map": "/loudsun1997/weather-icon-demo/static/css/main.9dada6c6.css.map",
-    "main.d3537593.js.map": "/loudsun1997/weather-icon-demo/static/js/main.d3537593.js.map",
-    "453.48380f38.chunk.js.map": "/loudsun1997/weather-icon-demo/static/js/453.48380f38.chunk.js.map"
+    "main.css": "/weather-icon-demo/static/css/main.9dada6c6.css",
+    "main.js": "/weather-icon-demo/static/js/main.3c91edfd.js",
+    "static/js/453.48380f38.chunk.js": "/weather-icon-demo/static/js/453.48380f38.chunk.js",
+    "index.html": "/weather-icon-demo/index.html",
+    "main.9dada6c6.css.map": "/weather-icon-demo/static/css/main.9dada6c6.css.map",
+    "main.3c91edfd.js.map": "/weather-icon-demo/static/js/main.3c91edfd.js.map",
+    "453.48380f38.chunk.js.map": "/weather-icon-demo/static/js/453.48380f38.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.9dada6c6.css",
-    "static/js/main.d3537593.js"
+    "static/js/main.3c91edfd.js"
   ]
 }
